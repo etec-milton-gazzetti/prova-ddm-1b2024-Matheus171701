@@ -7,7 +7,7 @@ const Tela2 = ({ navigation }) => {
       <Text style={styles.title}>Tela de Desenvolvimento</Text>
       <Button
         title="Ir para Sobre"
-        onPress={() => navigation.navigate('Sobre')}
+        onPress={() => navigation.navigate('Tela3')}
       />
     </View>
   );
