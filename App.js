@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Inicio from './screens/Tela1';
 import Desenvolvimento from './screens/Tela2';
 import Sobre from './screens/Tela3';
+import { useFonts } from 'expo-font';
 
 const Stack = createStackNavigator();
 

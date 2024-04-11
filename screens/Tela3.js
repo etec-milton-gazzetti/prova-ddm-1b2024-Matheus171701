@@ -1,27 +1,55 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, TouchableOpacity, ImageBackground, SafeAreaView, ScrollView, StatusBar, Header} from 'react-native';
+import eu from '../assets/fotominha.jpeg'
 
 const Tela3 = ({ navigation }) => {
     return(
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.titulo}>Sobre</Text>
-            <Text>
-                Esta é a tela de informações sobre o aplicativo.
+            <ScrollView>
+              <Image source={eu} style={styles.eu}/>
+            </ScrollView>
+            <ScrollView style={styles.textcontainer}>
+            <Text style={styles.informa}>
+                Nome do aluno: Matheus Henrique do Santos Souza
             </Text>
 
-            <View stylle={styles.botoes}>
-                <Button
-                    title="Voltar para home"
-                    onPress={() => navigation.navigate('Tela1')}
-                />
+            <Text style={styles.informa}>
+                RM: 07661
+            </Text>
 
-                <Button
-                    title="Voltar para desenvolvimento"
-                    onPress={() => navigation.navigate('Tela2')}
-                />
-            </View>
+            <Text style={styles.informa}>
+                Série: 3º Info
+            </Text>
 
-        </View>
+            <Text style={styles.informa}>
+                Professor: Graziani zanfolin
+            </Text>
+
+            <Text style={styles.explica}>
+            O porquê de eu ter escolhido o tema 'Império Mongol' foi por conta da minha grande admiração, 
+            possuída tanto pela história quanto pela trajetória do império citado. Como amante da história, 
+            é necessário reconhecer que o Império Mongol foi um dos maiores impérios existentes em toda a história humana,
+            em território, poder de expansão e militar
+            </Text>
+            </ScrollView>
+
+            <ScrollView style={styles.buttonsContainer}>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => navigation.navigate('Tela2')}
+        >
+          <Text style={styles.buttonText}>Voltar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.botao, { backgroundColor: 'red' }]}
+          onPress={() => navigation.navigate('Tela1')}
+        >
+          <Text style={styles.buttonText}>Início</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+        </SafeAreaView>
     )
 }
 
@@ -30,19 +58,51 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: '#142157'
     },
     titulo: {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
+      color: 'white',
+      padding: 5,
+      backgroundColor: 'red',
+      borderRadius: 15
     },
-    botoes: {
-        marginBottom: 20,
-          alignItems: 'center',
-          backgroundColor: 'red',
-          borderRadius: 4,
-          justifyContent: 'center'
-        }
+    buttonsContainer: {
+      width: '100%',
+      paddingHorizontal: 20,
+      marginTop: 20,
+    },
+    botao: {
+      backgroundColor: 'red',
+      alignItems: 'center',
+      paddingVertical: 15,
+      marginBottom: 10,
+      borderRadius: 10,
+    },
+    buttonText: {
+      color: 'white',
+      fontSize: 18,
+    },
+    informa: {
+      color: 'white',
+      padding: 10,
+      fontSize: 15,
+      textAlign: 'center'
+    },
+    
+    explica: {
+      color: 'white',
+      padding: 10,
+      fontSize: 15,
+      textAlign: 'justify'
+    },
+    eu: {
+      width: 150,
+      height: 150,
+      borderRadius: 300
+    }
 });
 
 export default Tela3;

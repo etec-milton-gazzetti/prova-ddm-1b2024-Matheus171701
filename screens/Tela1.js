@@ -14,7 +14,7 @@ const Tela1 = ({ navigation }) => {
                     source={bandeira}
                 />
             </ScrollView>
-            <View style={styles.buttonsContainer}>
+            <ScrollView style={styles.buttonsContainer}>
                 <TouchableOpacity
                     style={styles.botao}
                     onPress={() => navigation.navigate('Tela2')}
@@ -27,7 +27,7 @@ const Tela1 = ({ navigation }) => {
                 >
                     <Text style={styles.buttonText}>Sobre</Text>
                 </TouchableOpacity>
-            </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
