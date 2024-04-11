@@ -8,9 +8,14 @@ const Tela1 = ({ navigation }) => {
                 <Text style={styles.titulo}>O Império Mongol</Text>
             </ScrollView>
             <ScrollView>
+                <Image 
+                style={styles.imagem}
+                source={}/>
+            </ScrollView>
+            <ScrollView>
                 <Button title="Desenvolvimento"
-                onPress={() => navigation.navigate('Tela2')}
-                style={styles.botoes}
+                    onPress={() => navigation.navigate('Tela2')}
+                    style={styles.botoes}
                 />
                 <Button
                     title="Sobre"
@@ -32,10 +37,14 @@ const styles = StyleSheet.create({
     },
     titulo: {
         flex: 1,
+        fontSize: 30
     },
     botoes: {
         felx: 1,
         backgroundColor: 'red',
+        justifyContent: 'center',
+        paddingLeft: 15,
+        padding: 10,
     }
 });
 

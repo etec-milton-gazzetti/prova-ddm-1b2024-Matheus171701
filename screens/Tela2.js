@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20
   },
   title: {
     fontSize: 24,
@@ -51,9 +52,13 @@ const styles = StyleSheet.create({
   botoes: {
     marginBottom: 20,
     alignItems: 'center',
-    backgroundColor: 'red',
-    borderRadius: 4,
+    color: 'red',
+    borderRadius: 10,
     justifyContent: 'center'
+  },
+  texto:{
+    justifyContent: 'center',
+    textAlign: 'justify',
   }
 });
 
