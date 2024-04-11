@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, Image, SafeAreaView, ScrollView, StatusBar, Pressable, ImageBackground } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, StatusBar, TouchableOpacity, ImageBackground } from 'react-native';
+import bandeira from '../assets/images.jpg'
 
 const Tela1 = ({ navigation }) => {
     return (
@@ -9,20 +10,24 @@ const Tela1 = ({ navigation }) => {
             </ScrollView>
             <ScrollView>
                 <Image 
-                style={styles.imagem}
-                source={}/>
+                    style={styles.imagem}
+                    source={bandeira}
+                />
             </ScrollView>
-            <ScrollView>
-                <Button title="Desenvolvimento"
+            <View style={styles.buttonsContainer}>
+                <TouchableOpacity
+                    style={styles.botao}
                     onPress={() => navigation.navigate('Tela2')}
-                    style={styles.botoes}
-                />
-                <Button
-                    title="Sobre"
+                >
+                    <Text style={styles.buttonText}>Desenvolvimento</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={[styles.botao, { backgroundColor: 'red' }]}
                     onPress={() => navigation.navigate('Tela3')}
-                    style={styles.botoes}
-                />
-            </ScrollView>
+                >
+                    <Text style={styles.buttonText}>Sobre</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
@@ -33,19 +38,38 @@ const styles = StyleSheet.create({
         paddingTop: StatusBar.currentHeight,
         justifyContent: 'center',
         alignItems: 'center',
-        marginHorizontal: 16,
+        backgroundColor: 'green',
     },
     titulo: {
-        flex: 1,
-        fontSize: 30
-    },
-    botoes: {
-        felx: 1,
+        fontSize: 30,
+        marginTop: 20,
+        color: 'white',
         backgroundColor: 'red',
-        justifyContent: 'center',
-        paddingLeft: 15,
         padding: 10,
-    }
+        borderRadius: 10
+    },
+    buttonsContainer: {
+        width: '100%',
+        paddingHorizontal: 20,
+        marginTop: 20,
+    },
+    botao: {
+        backgroundColor: 'red',
+        alignItems: 'center',
+        paddingVertical: 15,
+        marginBottom: 10,
+        borderRadius: 10,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+    },
+    imagem: {
+        width: 300,
+        height: 200,
+        borderRadius: 50,
+        marginTop: 20,
+    },
 });
 
 export default Tela1;

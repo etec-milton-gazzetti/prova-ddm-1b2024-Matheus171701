@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, StatusBar, TouchableOpacity, ImageBackground } from 'react-native';
+import gengis from '../assets/home.png'
 
 const Tela2 = ({ navigation }) => {
   return (
@@ -17,21 +18,23 @@ const Tela2 = ({ navigation }) => {
           O legado do Império Mongol incluiu contribuições significativas para o intercâmbio cultural e comercial entre o Oriente e o Ocidente, bem como a disseminação de ideias, tecnologias e práticas administrativas. Embora tenha sido um período de conquista e dominação, o Império Mongol deixou uma marca duradoura na história global.
         </Text>
       </ScrollView>
-
-      <ScrollView>
-        <Button
-          title="Ir para Sobre"
-          onPress={() => navigation.navigate('Tela3')}
-          style={styles.botoes}
-        />
-
-        <Button
-          title="Voltar para home"
-          onPress={() => navigation.navigate('Tela1')}
-          style={styles.botoes}
-        />
-
+      <ScrollView style={styles.images}>
+    <Image />
       </ScrollView>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={() => navigation.navigate('Tela1')}
+        >
+          <Text style={styles.buttonText}>Voltar para home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.botao, { backgroundColor: 'red' }]}
+          onPress={() => navigation.navigate('Tela3')}
+        >
+          <Text style={styles.buttonText}>Sobre</Text>
+        </TouchableOpacity>
+      </View>
 
     </SafeAreaView>
   );
@@ -42,23 +45,41 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20
+    padding: 20,
+    backgroundColor: 'green'
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
-  },
-  botoes: {
-    marginBottom: 20,
-    alignItems: 'center',
-    color: 'red',
+    backgroundColor: 'red',
     borderRadius: 10,
-    justifyContent: 'center'
+    padding: 5,
+    color: 'white'
   },
-  texto:{
+  buttonsContainer: {
+    width: '100%',
+    paddingHorizontal: 20,
+    marginTop: 20,
+  },
+  botao: {
+    backgroundColor: 'red',
+    alignItems: 'center',
+    paddingVertical: 15,
+    marginBottom: 10,
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 18,
+  },
+  texto: {
     justifyContent: 'center',
     textAlign: 'justify',
+    color: 'white'
+  },
+  images:{
+
   }
 });
 
