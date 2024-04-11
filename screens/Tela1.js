@@ -1,35 +1,41 @@
-import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Button, Image, SafeAreaView, ScrollView, StatusBar, Pressable, ImageBackground } from 'react-native';
 
 const Tela1 = ({ navigation }) => {
-    return(
-        <View style={styles.container}>
-            <View style={styles.titulo}>
-                <Text>O Império Mongol</Text>
-            </View>
-        <View style= {styles.botoes}>
-            <Button
-                title="Desenvolvimento"
+    return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
+                <Text style={styles.titulo}>O Império Mongol</Text>
+            </ScrollView>
+            <ScrollView>
+                <Button title="Desenvolvimento"
                 onPress={() => navigation.navigate('Tela2')}
-            />
-         </View>   
-        </View>
+                style={styles.botoes}
+                />
+                <Button
+                    title="Sobre"
+                    onPress={() => navigation.navigate('Tela3')}
+                    style={styles.botoes}
+                />
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+        flex: 1,
+        paddingTop: StatusBar.currentHeight,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 16,
     },
     titulo: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
+        flex: 1,
     },
     botoes: {
-      marginBottom: 20,
+        felx: 1,
+        backgroundColor: 'red',
     }
 });
 

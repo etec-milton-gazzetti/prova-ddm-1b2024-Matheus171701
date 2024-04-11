@@ -1,15 +1,39 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, SafeAreaView, ScrollView, StatusBar } from 'react-native';
 
 const Tela2 = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Tela de Desenvolvimento</Text>
-      <Button
-        title="Ir para Sobre"
-        onPress={() => navigation.navigate('Tela3')}
-      />
-    </View>
+
+      <ScrollView>
+        <Text style={styles.texto}>
+          O Império Mongol foi um dos maiores impérios da história, estendendo-se por vastas áreas da Ásia durante o século XIII. Originário das estepes da Mongólia, foi fundado por Genghis Khan no início do século XIII. Sob o comando de líderes como Genghis Khan e seus sucessores, incluindo Kublai Khan, os mongóis conquistaram um território que se estendia desde a Europa Oriental até a Ásia Central e a China.
+
+          A expansão do Império Mongol foi caracterizada por sua ferocidade militar, estratégias inovadoras, mobilidade e táticas de guerra eficazes, incluindo o uso de cavalos e arqueiros montados. Eles também eram conhecidos por sua administração eficiente e tolerância religiosa, permitindo que diferentes culturas coexistissem sob seu domínio.
+
+          No entanto, o império enfrentou desafios devido à vasta extensão territorial, bem como problemas de sucessão após a morte de líderes-chave. Após o apogeu sob Kublai Khan, o império gradualmente começou a se fragmentar em diferentes khanatos e foi eventualmente absorvido por outros impérios e dinastias locais.
+
+          O legado do Império Mongol incluiu contribuições significativas para o intercâmbio cultural e comercial entre o Oriente e o Ocidente, bem como a disseminação de ideias, tecnologias e práticas administrativas. Embora tenha sido um período de conquista e dominação, o Império Mongol deixou uma marca duradoura na história global.
+        </Text>
+      </ScrollView>
+
+      <ScrollView>
+        <Button
+          title="Ir para Sobre"
+          onPress={() => navigation.navigate('Tela3')}
+          style={styles.botoes}
+        />
+
+        <Button
+          title="Voltar para home"
+          onPress={() => navigation.navigate('Tela1')}
+          style={styles.botoes}
+        />
+
+      </ScrollView>
+
+    </SafeAreaView>
   );
 };
 
@@ -24,6 +48,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
+  botoes: {
+    marginBottom: 20,
+    alignItems: 'center',
+    backgroundColor: 'red',
+    borderRadius: 4,
+    justifyContent: 'center'
+  }
 });
 
 export default Tela2;
